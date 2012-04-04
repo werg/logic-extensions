@@ -1,12 +1,12 @@
 # logic-extensions
 
-A collection of extensions for the Clojure `core.logic` relational/logic programming library.
+A collection of extensions for the Clojure core.logic relational/logic programming library.
 
-Currently only contains `logic-extensions.multo`, but I have a few more ideas ;).
+Currently only contains [logic-extensions.multo](https://github.com/werg/logic-extensions/blob/master/src/logic_extensions/multo.clj), but I have a few more ideas ;).
 
 ## Install
 
-Add the following entry to your `project.clj` ```clojure :dependencies``` vector to include logic-extensions in your project, from [clojars](https://clojars.org/logic-extensions):
+Add the following entry to your `project.clj` `:dependencies` vector to include logic-extensions in your project, from [clojars](https://clojars.org/werg/logic-extensions):
 
 ```clojure
     [werg/logic-extensions "0.0.1-SNAPSHOT"]
@@ -14,7 +14,7 @@ Add the following entry to your `project.clj` ```clojure :dependencies``` vector
 
 ## multo
 
-`logic-extensions.multo` is an extension of the `core.logic` `defne` mechanism
+logic-extensions.multo is an extension of the core.logic `defne` mechanism
 to account for predicates/relations where the goalset can be dynamically extended at runtime. I.e. a relational equivalent of multimethods, hence the naming.
 
 ### Usage
