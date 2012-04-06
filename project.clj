@@ -2,4 +2,5 @@
   :description "Extensions to Clojure's core.logic library"
   :url "http://github.com/werg/logic-extensions"
   :dependencies [[org.clojure/clojure "1.3.0"]
-                 [org.clojure/core.logic "0.7.1"]])
+                 [org.clojure/core.logic "0.7.1"]
+                 [com.datomic/datomic "0.1.2753"]])
