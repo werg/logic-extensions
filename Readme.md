@@ -12,6 +12,8 @@ Add the following entry to your `project.clj` `:dependencies` vector to include 
     [werg/logic-extensions "0.0.1-SNAPSHOT"]
 ```
 
+Install datomic according to these [instructions](http://datomic.com/company/resources/integrating-peer-lib).
+
 ## multo
 
 logic-extensions.multo is an extension of the core.logic `defne` mechanism

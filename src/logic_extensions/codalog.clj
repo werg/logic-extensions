@@ -7,6 +7,33 @@
 (def results (q '[:find ?e :where [?e :db/doc]] (db conn)))
 
 
+(defn fresh?
+  "Returns true, if `x' is fresh.
+  `x' must have been `walk'ed before!"
+  [x]
+  (lvar? x))
+
+(defn ground?
+  "Returns true, if `x' is ground.
+  `x' must have been `walk'ed before!"
+  [x]
+  (not (lvar? x)))
+
+
+(defn vertexo
+  "A relation where `v' is a vertex."
+  [v]
+  (fn [a]                                 ;; (1)
+    (let [gv (walk a v)]
+      (if (fresh? gv)
+        (to-stream                        ;; (2)
+         (->> (map #(unify a v %)
+                   (funql/vseq +graph+))
+              (remove not)))
+         (if (.containsVertex +graph+ gv)
+           a
+          (fail a))))))
+
 ; If you do then you should probably just write you own goals
 ; that can source data from your graph. This can easily be
 ; done by returning a Choice from your custom goal.
